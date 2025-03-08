@@ -12,14 +12,14 @@ public class CalculatorJTest {
     @Test
     public void testImpartire(){
         assertThat(calculatorUT.substract(2,-2)).
-                isEqualTo(-1);
+                isEqualTo(4);
         assertThat(calculatorUT.substract(2,-2)==4).
                 isTrue().
-                isInstanceOf(Calculator.class);
+                isInstanceOf(Boolean.class);
     }
     @Test
     public void testDivide(){
-        assertThatThrownBy(()-> calculatorUT.divide(2,2))
+        assertThatThrownBy(()-> calculatorUT.divide(2,0))
                 .isInstanceOf(ArithmeticException.class)
                 .hasMessage("Divide by zero");
     }
